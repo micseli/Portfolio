@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>John Doe's Portfolio - About Me</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">John Doe's Portfolio</div>
+    <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" aria-haspopup="true">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <ul id="nav-links" role="menu">
+      <li role="menuitem"><a href="index.html">Welcome</a></li>
+      <li role="menuitem"><a href="about.html" class="active">About Me</a></li>
+      <li role="menuitem"><a href="projects.html">Projects</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section aria-label="About Me Page" tabindex="0" class="about-page">
+    <h2>About Me</h2>
+    <div class="about-section">
+      <h3>🎓 Education</h3>
+      <ul class="edu-list">
+        <li><strong>2021 – 2023</strong> - Master of Science in Information Technology (MSIT)<br>University of the Philippines - Diliman <br><em>Focus: Scalable Systems, Cloud Architecture, and DevOps</em></li>
+        <li><strong>2007 – 2011</strong> - Bachelor of Science in Information Technology<br>Mapúa University, Manila <br><em>Specialization: Web Development & System Analysis</em></li>
+      </ul>
+    </div>
+    <div class="about-section">
+      <h3>What I Do</h3>
+      <ul>
+        <li>Custom Web Application Development</li>
+        <li>Mobile App Prototyping (B4A)</li>
+        <li>Database Design & Performance Tuning</li>
+        <li>API Development & Integration</li>
+        <li>Workflow Automation</li>
+        <li>Bug Fixing, Refactoring, and Maintenance</li>
+      </ul>
+    </div>
+    <div class="about-section">
+      <h3>🛠️ Tech I Use</h3>
+      <ul class="skills-list" aria-label="Technologies">
+        <li>Python</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>SQL</li>
+        <li>HTML/CSS</li>
+        <li>MySQL</li>
+        <li>Git</li>
+        <li>Node.js</li>
+        <li>B4A</li>
+      </ul>
+    </div>
+    <div class="about-section">
+      <h3>Contact</h3>
+      <ul class="contacts-list">
+        <li>Email: <a href="mailto:doejohn1@gmail.com">doejohn1@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener">linkedin.com/in/johndoe</a></li>
+        <li>GitHub: <a href="https://github.com/johndoe" target="_blank" rel="noopener">github.com/johndoe</a></li>
+        <li>WhatsApp: <a href="tel:+1234567890">+123-456-7890</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 John Doe. All rights reserved.
+</footer>
+
+<script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('open');
+  });
+
+  // Accessibility: toggle by keyboard
+  hamburger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      hamburger.click();
+    }
+  });
+</script>
+</body>
+</html>
+

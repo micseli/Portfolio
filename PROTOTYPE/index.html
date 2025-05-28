@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>John Doe's Portfolio - Welcome</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">John Doe's Portfolio</div>
+    <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" aria-haspopup="true">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <ul id="nav-links" role="menu">
+      <li role="menuitem"><a href="index.html" class="active">Welcome</a></li>
+      <li role="menuitem"><a href="about.html">About Me</a></li>
+      <li role="menuitem"><a href="projects.html">Projects</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section aria-label="Welcome Page" tabindex="0" class="welcome-page">
+    <h1>Welcome to My Portfolio!</h1>
+    <p>Hi! I'm John Doe, a Programming Specialist. Your Problem, My Code – Let's Build the Future Together.</p>
+    <p>A passionate and detail-oriented programming specialist with a strong background in software development, system design, and automation. I transform real-world problems into efficient, scalable, and maintainable code.</p>
+    <p>With 10+ years of experience in technologies like Python, Java, SQL, and JavaScript, I have built tools, web applications, and custom systems for individuals, startups, and small businesses.</p>
+    <p>I believe in writing clean code, meeting deadlines, and delivering solutions that truly make an impact.</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 John Doe. All rights reserved.
+</footer>
+
+<script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('open');
+  });
+
+  // Accessibility: toggle by keyboard
+  hamburger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      hamburger.click();
+    }
+  });
+</script>
+</body>
+</html>
+

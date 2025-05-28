@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>John Doe's Portfolio - Projects</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">John Doe's Portfolio</div>
+    <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" aria-haspopup="true">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <ul id="nav-links" role="menu">
+      <li role="menuitem"><a href="index.html">Welcome</a></li>
+      <li role="menuitem"><a href="about.html">About Me</a></li>
+      <li role="menuitem"><a href="projects.html" class="active">Projects</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section aria-label="Projects Page" tabindex="0" class="projects-page">
+    <h2>🧪 Projects</h2>
+    <p>Real-World Code in Action</p>
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-title">Student Management System</div>
+        <div class="project-desc">Java + MySQL CRUD system for schools to manage records and attendance.</div>
+      </article>
+      <article class="project-card">
+        <div class="project-title">Mind Mania Game (Mobile)</div>
+        <div class="project-desc">Built with B4A; gamifies users’ riddles that makes you think.</div>
+      </article>
+      <article class="project-card">
+        <div class="project-title">Barangay Service Hub (Mobile)</div>
+        <div class="project-desc">Built with B4A; transparent and more accessible application for every barangay.</div>
+      </article>
+      <article class="project-card">
+        <div class="project-title">Python Auto-Emailer</div>
+        <div class="project-desc">Automated script to generate and send reports with attachments.</div>
+      </article>
+      <article class="project-card">
+        <div class="project-title">E-Commerce Backend</div>
+        <div class="project-desc">Node.js + MongoDB backend with JWT login and product management APIs.</div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 John Doe. All rights reserved.
+</footer>
+
+<script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('open');
+  });
+
+  // Accessibility: toggle by keyboard
+  hamburger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      hamburger.click();
+    }
+  });
+</script>
+</body>
+</html>
